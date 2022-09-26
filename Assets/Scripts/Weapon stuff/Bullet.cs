@@ -3,18 +3,18 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    Rigidbody2D rb;
-    public float Speed;
+    Rigidbody2D rigidBody;
+    public float speed;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        Speed = 8f;
+        rigidBody = GetComponent<Rigidbody2D>();
+        speed = 8f;
     }
 
-    public Wapoon gun;
+    public Weapon gun;
     // Update is called once per frame
     void Update()
     {

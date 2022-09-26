@@ -4,32 +4,34 @@ using UnityEngine;
 // All dis so it doesn't shake like its an earthquake my man...
 public class CineShake : MonoBehaviour
 {
-    private CinemachineVirtualCamera cum;
-    private float shook;
+    private CinemachineVirtualCamera virtualCam;
+    private float shakeDuration;
     // Start is called before the first frame update
     private void Awake()
     {
-        cum = GetComponent<CinemachineVirtualCamera>();
+        virtualCam = GetComponent<CinemachineVirtualCamera>();
     }
 
-    //Equation to be called
-    public void ShakeCam(float intense, float time)
+    // Equation to be called
+    public void ShakeCam(float intensity, float duration)
     {
-        CinemachineBasicMultiChannelPerlin come = cum.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        come.m_AmplitudeGain = intense;
-        shook = time;
+
+        // What is CinemachineBasicMultiChannelPerlin?
+        CinemachineBasicMultiChannelPerlin come = virtualCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        come.m_AmplitudeGain = intensity;
+        shakeDuration = duration;
     }
 
     //How the equation operates
     private void Update()
     {
-        if (shook > 0) 
+        if (shakeDuration > 0) 
         {
-            shook -= Time.deltaTime;
+            shakeDuration -= Time.deltaTime;
 
-            if (shook <= 0f)
+            if (shakeDuration <= 0f)
             {
-                CinemachineBasicMultiChannelPerlin come = cum.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+                CinemachineBasicMultiChannelPerlin come = virtualCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
                 come.m_AmplitudeGain = 0f;
             }
         }

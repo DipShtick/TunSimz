@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Walls : MonoBehaviour
 {
-    void OnTriggerExit2D(Collider2D col) 
+    void OnTriggerExit2D(Collider2D collider) 
     {
-        Destroy(col.gameObject);
+        Destroy(collider.gameObject);
     }
 
 }
