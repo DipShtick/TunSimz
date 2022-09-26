@@ -24,19 +24,7 @@ public class Player : MonoBehaviour
         invincible = false;
     }
 
-    public InputAction playerControls;
-    public InputAction playerAttack;
-    public InputAction playerInteract;
-
-    private void OnEnable()
-    {
-        playerControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerControls.Disable();
-    }
+    
 
     // Update is called once per frame
     Vector2 mov;
@@ -45,7 +33,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // LE movement.
-        mov = playerControls.ReadValue<Vector2>();
+        
         
         // If he ded, he goes deding
         if (HP <= 0) 
@@ -65,7 +53,7 @@ public class Player : MonoBehaviour
         rb.velocity = new Vector2(mov.x * speed, mov.y * speed) ;
     }
 
-    // Takel tri7a execution function
+    // Damage function
     public bool coll;
     void OnCollisionEnter2D(Collision2D col)
     {
