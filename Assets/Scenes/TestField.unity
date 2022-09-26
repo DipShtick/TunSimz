@@ -231,7 +231,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2126518187}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScoreSystem, Assembly-CSharp
         m_MethodName: Replay
         m_Mode: 1
@@ -16698,8 +16698,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3a6b87b0cc2d543ae029326aa8e117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  gameManager: {fileID: 0}
+  damagePistol: 0
+  damageFist: 0
+  explosionDamage: 0
+  rangeExplosion: 0
+  rangePistol: 0
+  rangeFist: 0
+  firerateFist: 0
+  fireratePistol: 0
+  speedBullet: 0
 --- !u!1 &1438215315
 GameObject:
   m_ObjectHideFlags: 0
@@ -17857,50 +17864,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2126518188}
-  - component: {fileID: 2126518187}
+  - component: {fileID: 2126518189}
   m_Layer: 0
-  m_Name: StatObject
+  m_Name: TheEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2126518187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2126518186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9d1c371586b8a645ae7998448d5f3c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 1799995882}
-  killme: 0
-  retry: {fileID: 239510246}
-  HStext: {fileID: 1536631638}
-  pHP: {fileID: 1572218930}
-  ScoreUI: {fileID: 1456747308}
-  dood: {fileID: 21300000, guid: d9945e87d33b9f741b5bd993feb7ab98, type: 3}
-  damagePistol: 0
-  damageFist: 0
-  explosionDamage: 0
-  rangeExplosion: 0
-  rangePistol: 0
-  rangeFist: 0
-  firerateFist: 0
-  fireratePistol: 0
-  speedSoldier: 0
-  speedFrere: 0
-  speedCop: 0
-  speedDrugDealer: 0
-  speedRusher: 0
-  knockback: 0
-  deaths: 0
-  totalDamageDealt: 0
-  totalDamageTaken: 0
 --- !u!4 &2126518188
 Transform:
   m_ObjectHideFlags: 0
@@ -17916,3 +17887,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2126518189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126518186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd99b422eb9aa44db90cc55d56a04fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  scoreValue: 0
+  HStext: {fileID: 0}
+  PlayerHP: {fileID: 0}
+  ScoreUI: {fileID: 0}
+  spriteDead: {fileID: 0}
+  retry: {fileID: 0}
+  speedSoldier: 0
+  speedFrere: 0
+  speedCop: 0
+  speedDrugDealer: 0
+  speedRusher: 0
+  knockback: 0
+  deaths: 0
+  totalDamageDealt: 0
+  totalDamageTaken: 0
