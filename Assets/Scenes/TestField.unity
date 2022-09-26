@@ -462,7 +462,6 @@ GameObject:
   m_Component:
   - component: {fileID: 356528109}
   - component: {fileID: 356528108}
-  - component: {fileID: 356528107}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -470,26 +469,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &356528107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356528106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &356528108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13518,7 +13497,7 @@ GameObject:
   - component: {fileID: 1253689093}
   - component: {fileID: 1253689092}
   m_Layer: 3
-  m_Name: borders (3)
+  m_Name: border
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16719,9 +16698,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b3a6b87b0cc2d543ae029326aa8e117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 3061563756393627120, guid: 3be7a6cf65134324fa867e40b552cfd7, type: 3}
-  isShooting: 0
-  gm: {fileID: 2126518187}
+  bullet: {fileID: 0}
+  gameManager: {fileID: 0}
 --- !u!1 &1438215315
 GameObject:
   m_ObjectHideFlags: 0
@@ -17052,9 +17030,8 @@ GameObject:
   - component: {fileID: 1646054385}
   - component: {fileID: 1646054384}
   - component: {fileID: 1646054383}
-  - component: {fileID: 1646054386}
   m_Layer: 3
-  m_Name: borders (1)
+  m_Name: border
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17153,18 +17130,6 @@ Transform:
   m_Father: {fileID: 974245657}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1646054386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1646054382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2571479f4b403354ab2941d768b2cf84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1667327521
 GameObject:
   m_ObjectHideFlags: 0
@@ -17177,7 +17142,7 @@ GameObject:
   - component: {fileID: 1667327523}
   - component: {fileID: 1667327522}
   m_Layer: 3
-  m_Name: borders
+  m_Name: border
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17315,33 +17280,6 @@ MonoBehaviour:
   HP: 100
   HealthBarUI: {fileID: 976090476}
   slide: {fileID: 1816669180}
-  playerControls:
-    m_Name: Player Controls
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: a31af93f-522b-4a27-a7c2-5112b816cff1
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  playerAttack:
-    m_Name: Player Attack
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: b9f880ba-bda1-4330-88ee-1b4c4150f067
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  playerInteract:
-    m_Name: Player Interact
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: b39451d6-6b7d-4195-bb3c-3e634b774148
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   isdead: 0
   rb: {fileID: 1799995887}
   coll: 0
@@ -17561,7 +17499,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
 --- !u!1 &1816669178
 GameObject:
   m_ObjectHideFlags: 0
@@ -17811,7 +17749,7 @@ GameObject:
   - component: {fileID: 1996154100}
   - component: {fileID: 1996154099}
   m_Layer: 3
-  m_Name: borders (2)
+  m_Name: border
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17921,7 +17859,7 @@ GameObject:
   - component: {fileID: 2126518188}
   - component: {fileID: 2126518187}
   m_Layer: 0
-  m_Name: YassinStal
+  m_Name: StatObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

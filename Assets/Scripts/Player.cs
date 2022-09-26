@@ -24,17 +24,41 @@ public class Player : MonoBehaviour
         invincible = false;
     }
 
-    
+    //Input System
+    public Controls control;
+    private InputAction moveInput;
+    private InputAction fireInput;
+    private InputAction interact;
+    private void Awake()
+    {
+        control = new Controls();
+    }
+
+    private void OnEnable()
+    {
+        moveInput = control.Player.Move;
+        moveInput.Enable();
+
+        fireInput = control.Player.Fire;
+        fireInput.Enable();
+        fireInput.performed += Attack;
+    }
+
+    private void OnDisable()
+    {
+        moveInput.Disable();
+        fireInput.Disable();
+    }
+
 
     // Update is called once per frame
-    Vector2 mov;
+    Vector2 moveDirection;
     public bool isdead;
-    
     void Update()
     {
-        // LE movement.
-        
-        
+        // LE movement input.
+        moveDirection = moveInput.ReadValue<Vector2>(); 
+
         // If he ded, he goes deding
         if (HP <= 0) 
         {
@@ -47,11 +71,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    //Input translates to movement per realtime second.
     public Rigidbody2D rb;
     void FixedUpdate() 
     {
-        rb.velocity = new Vector2(mov.x * speed, mov.y * speed) ;
+        rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed) ;
     }
+
+    //Attack function
+    [SerializeField] private void Attack(InputAction.CallbackContext context)
+    {
+        Debug.Log("FIRE!!!!!!!!!");
+    }   
 
     // Damage function
     public bool coll;
