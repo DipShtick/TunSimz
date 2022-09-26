@@ -9,7 +9,7 @@ public class NPC : MonoBehaviour
     private float HP;
     public float MaxHP;
     public GameObject HealthBarUI;
-    public GameManager karen;
+    public Tracker stats;
     public float Speed;
     private float distance;
     private Rigidbody2D rb;
@@ -30,7 +30,7 @@ public class NPC : MonoBehaviour
         HP = MaxHP;
         //Needs this to run other code
         Player = GameObject.Find("Player");
-        karen = GameObject.Find("YassinStal").GetComponent<GameManager>();
+        stats = GameObject.Find("TheEye").GetComponent<Tracker>();
         //Starts HP bar at 0
         slider.value = 0;
         HealthBarUI.SetActive(false);
@@ -99,7 +99,7 @@ public class NPC : MonoBehaviour
         //Score calculation then ded
         if (HP <= 0) 
         {
-            karen.AddScore(100);
+            stats.AddScore(100);
             Destroy(gameObject);
 
         }

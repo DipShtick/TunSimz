@@ -2,49 +2,49 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class Tracker : MonoBehaviour
 {
     [SerializeField]
     public GameObject Player;
-    public int killme; 
+    public int scoreValue; 
     // Start is called before the first frame update
     void Start()
     {
-        killme = 0;
+        scoreValue = 0;
         Player = GameObject.Find("Player");
     }
 
-    public GameObject retry;
     public Text HStext;
-    public GameObject pHP;
+    public GameObject PlayerHP;
     public Text ScoreUI;
-    public Sprite dood;
+    public Sprite spriteDead;
 
     // Update is called once per frame
     void Update()
     {
         //Displays score & highscore
-        ScoreUI.text = killme.ToString();
+        ScoreUI.text = scoreValue.ToString();
         HStext.text = PlayerPrefs.GetInt("Weed").ToString();
 
         //Display retry button after dead
         if (Player.activeInHierarchy == false)
         {
             retry.SetActive(true);
-            pHP.GetComponent<Image>().sprite = dood;
+            PlayerHP.GetComponent<Image>().sprite = spriteDead;
         }
     }
     public void AddScore(int bonus) 
     {
         //Score & highscore calculations
-        killme = killme + bonus;
-        if (killme > PlayerPrefs.GetInt("Weed")) 
+        scoreValue = scoreValue + bonus;
+        if (scoreValue > PlayerPrefs.GetInt("Weed")) 
         {
-            PlayerPrefs.SetInt("Weed", killme);
+            PlayerPrefs.SetInt("Weed", scoreValue);
         }
         
     }
 
+    public GameObject retry;
     // Reloads the scene after clicking retry button
     public void Replay() 
     {
@@ -53,17 +53,6 @@ public class GameManager : MonoBehaviour
         retry.SetActive(false);
     }
 
-    //Attack
-    public float damagePistol;
-    public float damageFist;
-    public float explosionDamage;
-    //Weapon Range
-    public float rangeExplosion;
-    public float rangePistol;
-    public float rangeFist;
-    //Attack Speed
-    public float firerateFist;
-    public float fireratePistol;
     //Character speed
     public float speedSoldier;
     public float speedFrere;

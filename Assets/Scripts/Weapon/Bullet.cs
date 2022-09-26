@@ -3,14 +3,14 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    Rigidbody2D rigidBody;
+    Rigidbody2D rb;
     public float speed;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         speed = 8f;
     }
 
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        rb.velocity = transform.right * speed;
     }
 
 }
