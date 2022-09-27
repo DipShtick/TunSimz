@@ -12,9 +12,22 @@ public class Player : MonoBehaviour
     public GameObject HealthBarUI;
     public Slider slide;
 
+    // Unused yet
+    [SerializeField]
+    public string itemEquipped = "";
+
+    [SerializeField]
+    public bool isEquipped = false;
+
+    [SerializeField]
+    public Transform pistol;
+
     // Start is called before the first frame update
     void Start()
     {
+        pistol = transform.Find("pistol");
+        pistol.GetComponent<SpriteRenderer>().color = new Color(1,1,1,0);
+
         MaxHP = 100f;
         HP = MaxHP;
         isdead = false;
@@ -81,7 +94,10 @@ public class Player : MonoBehaviour
     //Attack function
     [SerializeField] private void Attack(InputAction.CallbackContext context)
     {
-        Debug.Log("FIRE!!!!!!!!!");
+        if (isEquipped)
+        {
+            Debug.Log("FIRE!!!!!!!!!");
+        }
     }   
 
     // Damage function
