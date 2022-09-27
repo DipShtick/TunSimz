@@ -52,18 +52,5 @@ public class Tracker : MonoBehaviour
         Time.timeScale = 1;
         retry.SetActive(false);
     }
-
-    //Character speed
-    public float speedSoldier;
-    public float speedFrere;
-    public float speedCop;
-    public float speedDrugDealer;
-    public float speedRusher;
-    //Consequences
-    public float knockback;
-    //Stats
-    public float deaths;
-    public float totalDamageDealt;
-    public float totalDamageTaken;
-    //Uncategorised
+    
 }

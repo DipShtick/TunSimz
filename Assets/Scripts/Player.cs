@@ -41,7 +41,6 @@ public class Player : MonoBehaviour
 
         fireInput = control.Player.Fire;
         fireInput.Enable();
-        fireInput.performed += Attack;
     }
 
     private void OnDisable()
@@ -59,7 +58,7 @@ public class Player : MonoBehaviour
         // LE movement input.
         moveDirection = moveInput.ReadValue<Vector2>(); 
 
-        // If he ded, he goes deding
+        // HP = 0 --> dies.
         if (HP <= 0) 
         {
             isdead = true;
@@ -79,12 +78,12 @@ public class Player : MonoBehaviour
     }
 
     //Attack function
-    [SerializeField] private void Attack(InputAction.CallbackContext context)
+    public void Attack()
     {
         Debug.Log("FIRE!!!!!!!!!");
     }   
 
-    // Damage function
+    // GET Damaged function
     public bool coll;
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -99,12 +98,14 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Calculates HP for the UI to turn it into a number between 0 and 1
     private bool invincible;
     float CalculateHP() 
     {
         return HP/MaxHP;
     }
 
+    // Deal Damage function
     IEnumerator TakeDamage() 
     {
         if (!invincible) 
@@ -122,6 +123,7 @@ public class Player : MonoBehaviour
 
     }
 
+    // When hit, change color
     IEnumerator blood()
     {
         yield return new WaitForSeconds (0.2f);
