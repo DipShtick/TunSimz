@@ -751,6 +751,7 @@ GameObject:
   - component: {fileID: 667388971}
   - component: {fileID: 667388972}
   - component: {fileID: 667388973}
+  - component: {fileID: 667388974}
   m_Layer: 0
   m_Name: trashgun
   m_TagString: Untagged
@@ -839,6 +840,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firepoint: {fileID: 1729964402}
+  bullet: {fileID: 0}
+  cam: {fileID: 519420031}
+  rb: {fileID: 0}
+--- !u!50 &667388974
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 667388970}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &759806286
 GameObject:
   m_ObjectHideFlags: 0
