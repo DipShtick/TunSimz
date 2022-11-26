@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - NPC
+  - Humanoid
+  - Border
   layers:
   - Default
   - TransparentFX

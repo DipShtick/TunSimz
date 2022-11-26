@@ -22,16 +22,17 @@ public class Tracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Displays score & highscore
+        /* Displays score & highscore
         ScoreUI.text = scoreValue.ToString();
         HStext.text = PlayerPrefs.GetInt("Weed").ToString();
 
         //Display retry button after dead
-        if (Player.activeInHierarchy == false)
+        //** if (Player.activeInHierarchy == false)
         {
             retry.SetActive(true);
             PlayerHP.GetComponent<Image>().sprite = spriteDead;
         }
+        */
     }
     public void AddScore(int bonus) 
     {

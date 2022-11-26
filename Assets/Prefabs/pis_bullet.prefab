@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3061563756393627122}
   - component: {fileID: 3061563756393627121}
   - component: {fileID: 5259358903246408632}
+  - component: {fileID: 5374877539472714145}
   - component: {fileID: 6276554497267392882}
   - component: {fileID: 2894541409095316261}
   m_Layer: 0
@@ -99,7 +100,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 779b929ef1ce3a54fbf86a06f024ac0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 0.2
+  BulletSpeed: 0
+--- !u!114 &5374877539472714145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3061563756393627120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3a6b87b0cc2d543ae029326aa8e117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Firerate: 0
+  ReloadingTime: 0
+  Accuracy: 0
+  Magsize: 0
+  MaxAmno: 0
+  Damage: 0
+  _gunpoint: {x: 0, y: 0, z: 0}
+  _bulletTrajectory: {x: 0, y: 0, z: 0}
+  _bullet: {fileID: 3061563756393627120}
+  BulletShootDelay: 0
 --- !u!61 &6276554497267392882
 BoxCollider2D:
   m_ObjectHideFlags: 0
